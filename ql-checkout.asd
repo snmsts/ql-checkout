@@ -22,9 +22,10 @@
   :author "SANO Masatoshi"
   :mailto "snmsts@gmail.com"
   :license "MIT"
-  :depends-on ()
+  :depends-on (:dexador
+	       :split-sequence)
   :components ((:module "src"
                 :components
-                ((:file "package"))))
+                ((:file "checkout"))))
   :description "-"
   :in-order-to ((test-op (load-op :ql-checkout.test))))
