@@ -6,10 +6,6 @@ cache:
     - $HOME/.roswell
     - $HOME/.config/common-lisp
 
-os:
-  - osx
-  - linux
-
 addons:
   apt:
     packages:
@@ -30,11 +26,14 @@ env:
     - LISP=cmucl
     - LISP=alisp
 
+os:
+  - osx
+  - linux
+
 matrix:
   allow_failures:
     - env: LISP=clisp
     - env: LISP=abcl
-    - env: LISP=ecl
     - env: LISP=cmucl
     - env: LISP=alisp
 

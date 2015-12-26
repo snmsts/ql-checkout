@@ -1,5 +1,7 @@
 
-# ql-checkout - -
+# ql-checkout - 
+
+[![Build Status](https://travis-ci.org/snmsts/ql-checkout.svg?branch=master)](https://travis-ci.org/snmsts/ql-checkout)
 
 ## Usage
 
