@@ -1,18 +1,27 @@
 
-# Ql-Checkout - -
+# ql-checkout - -
 
 ## Usage
 
+```common-lisp
+(ql-checkout:checkout :babel)
+;=> #P"/home/snmsts/.roswell/local-projects/babel/"
+;"git://github.com/cl-babel/babel.git"
+```
 
 ## Dependencies
-This library is at least tested on implementation listed below:
-
-+ SBCL 1.3.1 on X86-64 Linux 4.2.0-21-generic (author's environment)
-
-Also, it depends on the following libraries:
-
+quicklisp and git tested on sbcl on linux.
 
 ## Installation
+
+```
+$ cd ~/common-lisp
+$ git clone https://github.com/snmsts/ql-checkout
+```
+
+```common-lisp
+(ql:quickload :ql-checkout)
+```
 
 ## Author
 

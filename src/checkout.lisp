@@ -15,16 +15,17 @@
       #-quicklisp (merge-pathnames ".qlcheckout/" (user-homedir-pathname))))
 
 (defun notyet (system uri &rest params)
-  (list system uri params))
+  (error "not supported ~A" (list system uri params)))
 
 (defun git (system uri &rest params)
   (declare (ignorable params))
   (uiop:run-program "which git")
   (let ((path (merge-pathnames (format nil "~A/" (string-downcase system)) *checkout-path*)))
     (if (probe-file path)
-        (error "~A already exists" path)
-        (uiop:run-program (format nil "git clone ~A ~A" uri path))))
-  uri)
+        (format *error-output* "~A already exists" path)
+        (uiop:run-program (format nil "git clone ~A ~A" uri path)))
+    (values path uri)))
+  
 
 (defun kmr-git (system base)
   (git system (format nil "http://git.kpe.io/~A.git" base)))
